@@ -8,13 +8,19 @@
 // ! RACCOLTA DATI
 // Chiedo i km da percorrere
 const userDistance = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
+// Verifico che i km siano un numero > di 0
+if (isNaN(userDistance) || userDistance <= 0) {
+  alert("Chilometri inseriti non validi. Riprova");
+}
 // Chiedo l'età dell'utente
 const userAge = parseInt(prompt("Quanti anni hai?"));
 // Preparo una variabile per il messaggio
+console.log(userAge, userDistance);
 
-// ! ESECUZIONE
-// Verifico che l'età sia un numero intero > di 0
-// Verifico che i km siano un numero > di 0
+// Verifico che l'età sia un numero > di 0
+if (isNaN(userAge) || userAge <= 0) {
+  alert("Età inserita non valida. Riprova");
+}
 // Calcolo il prezzo del biglietto
 
 // SE l'età è >= 65 anni
