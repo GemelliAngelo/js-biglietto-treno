@@ -5,7 +5,7 @@
 // * - va applicato uno sconto del 40% per gli over 65.
 // * - L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
-// ! RACCOLTA DATI
+// * CHILOMETRI DA PERCORRERE 
 
 let ticketPrice = userDistance * 0.21;
 ticketPrice = ticketPrice.toFixed(2);
@@ -13,20 +13,27 @@ ticketPrice = ticketPrice.toFixed(2);
 const userDistance = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
 if (isNaN(userDistance) || userDistance <= 0) {
   alert("Chilometri inseriti non validi. Riprova");
-} else {
-  const userAge = parseInt(prompt("Quanti anni hai?"));
 }
 
+// * ETÀ
+
+const userAge = parseInt(prompt("Quanti anni hai?"));
 if (isNaN(userAge) || userAge <= 0) {
   alert("Età inserita non valida. Riprova");
-} else {
 }
 
-// SE l'età è >= 65 anni
-//  - applico lo sconto del 40%
+// * CALCOLO PREZZO SCONTATO
+    
+if (userAge < 18) {
+    ticketPrice = ticketPrice * 20%
+}
 
-//  ALTRIMENTI SE l'età è <= 18 anni
-//   - applico lo sconto del 20%
+else if (userAge >= 65) {
+    ticketPrice = ticketPrice * 40%
+    
+}
 
 // ! OUTPUT
-// Restituisco il prezzo del biglietto specificando lo sconto
+
+console.log(ticketPrice);
+
